@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset ="UTF-8">
+        <meta name="viewport" content="width device-width, initial-scal=1.0">
+        <title>Pathways to Academic English Multi-media Flashcards</title>
+        <link href="suffix_style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body onload="getRandomWord()">
+        <h1 class="title">Suffixes Multi-media Flashcards</h1>
+        <div class="pos" id="pos">
+            <h3 id="directions">What is the part of speech of the following word?</h3>
+            <h1 id="suffix">Word</h1>
+            <button id="answer1a" class="ansbutton" onclick="answeredAa()">noun</button>
+            <button id="answer2a" class="ansbutton" onclick="answeredBa()">verb</button>
+            <button id="answer3a" class="ansbutton" onclick="answeredCa()">adjective</button>
+            <button id="answer4a" class="ansbutton" onclick="answeredDa()">adverb</button>
+            <br>
+            <h1 id="good_pos" style="visibility: hidden; color:rgb(106, 201, 29); font-weight: bold; text-shadow: 2px 2px 10px rgb(43, 43, 43)">Correct!</h1>
+            <br>
+        </div>
+        <div class="t_word" id="all_mc">
+            <h3>Choose a word for sentence 2 that will have the same meaning as sentence 1.</h3>
+            <label for="a_sentence">Sentence 1:</label>
+            <br>
+            <h2 id="a_sentence">Match the prefix with its meaning.</h3>
+            <label for="q_sentence">Sentence 2:</label>
+            <br>
+            <h2 id="q_sentence">Match the prefix with its meaning.</h3>
+            <button id="answer1" class="ansbutton" onclick="answeredA()">Answer 1</button>
+            <button id="answer2" class="ansbutton" onclick="answeredB()">Answer 2</button>
+            <button id="answer3" class="ansbutton" onclick="answeredC()">Answer 3</button>
+            <button id="answer4" class="ansbutton" onclick="answeredD()">Answer 4</button>
+	    <br>
+            <h1 id="good_a" style="visibility: hidden; color:rgb(106, 201, 29); font-weight: bold; text-shadow: 2px 2px 10px rgb(43, 43, 43)">Correct!</h1>
+            <br>
+        </div>
+        <div class="h_and_s" id="all_sl">
+            <h3>Hear and speak an example word.</h3>
+            <h1 id="example_word" style="display: none">Example Word</h1>
+            <br>
+            <br>
+            <button id="hear" class="slbutton" onclick="Listen()">Hear</button>
+            <button id="talk" class="slbutton" onclick="start()">Speak</button>
+            <br>
+            <br>
+            <label for="speech_output">The computer heard...</label>
+            <br>
+            <textarea id="speech_output" style="width:400px; height: 40px" readonly></textarea>
+	    <br>
+            <h1 id="good_p" style="visibility: hidden; color:rgb(67, 168, 21); font-weight: bold; text-shadow: 2px 2px 10px rgb(43, 43, 43)">Good Job!</h1>
+            <br>
+        </div>
+        <div style="text-align:center">
+            <button class="nw_button" onclick="getRandomWord()">Get New Suffix</button>
+        </div>
+            <br>
+            <div style="text-align:center">
+                <input type="checkbox" id="pos_cb" name="pos_cb" value="1" checked onclick="Check_POS()">
+                <label for="vocab_cb">Part of Speech Questions</label>
+                <input type="checkbox" id="vocab_cb" name="vocab_cb" value="1" checked onclick="Check_Vocab()">
+                <label for="vocab_cb">Sentence Questions</label>
+                <input type="checkbox" id="s_and_l_cb" name="s_and_l_cb" value="1" checked onclick="Check_SL()">
+                <label for="s_and_l_cb">Speaking and Listening</label>
+            </div>
+
+        </div>
+        <script type="text/javascript" src="suffixes_js.js"></script>
+        
+    </body>
+</html>
+
+
+
