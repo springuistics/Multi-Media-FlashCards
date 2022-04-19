@@ -1,0 +1,15 @@
+.two-col{
+    overflow: hidden;
+}
+
+.two-col .Acards  {
+    width: 40%;
+    float: left;
+}
+
+
+.two-col .Bcards{
+    width: 40%;
+    float: right;
+}
+
