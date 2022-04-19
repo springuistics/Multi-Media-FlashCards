@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset ="UTF-8">
+        <meta name="viewport" content="width device-width, initial-scal=1.0">
+        <title>Pathways to Academic English Multi-media Flashcards</title>
+        <link href="synonym_style.css" rel="stylesheet" type="text/css">
+    </head>
+    <body onload="getRandomWord()">
+        <h1 class="title">Synonyms Multi-media Flashcards</h1>
+        <h2 style="text-align:center">Synonyms 2: (12~22)</h2>
+        <div class="t_word" id="all_mc">
+            <h3 id="sentence">Choose the best synonym for the word in the sentence:</h3>
+            <h1 id="word">Prefix</h1>
+            <h3 id="q_sentence"> Sentence Goes Here</h3>
+            <button id="answer1" class="ansbutton" onclick="answeredA()">Answer 1</button>
+            <button id="answer2" class="ansbutton" onclick="answeredB()">Answer 2</button>
+            <button id="answer3" class="ansbutton" onclick="answeredC()">Answer 3</button>
+            <button id="answer4" class="ansbutton" onclick="answeredD()">Answer 4</button>
+	    <br>
+            <h2 id="good_a" style="visibility: hidden; color:rgb(106, 201, 29); font-weight: bold">Correct!</h2>
+            <br>
+        </div>
+        <div class="h_and_s" id="all_sl">
+            <h3>Hear and speak the word.</h3>
+            <h1 id="example_word" style="display: none">Example Word</h1>
+            <br>
+            <br>
+            <button id="hear" class="slbutton" onclick="Listen()">Hear</button>
+            <button id="talk" class="slbutton" onclick="start()">Speak</button>
+            <br>
+            <br>
+            <label for="speech_output">The computer heard...</label>
+            <br>
+            <textarea id="speech_output" style="width:400px; height: 40px" readonly></textarea>
+	    <br>
+            <h2 id="good_p" style="visibility: hidden; color:rgb(67, 168, 21); font-weight: bold">Good Job!</h2>
+            <br>
+        </div>
+        <div style="text-align:center">
+            <button class="nw_button" onclick="getRandomWord()">Get New Word</button>
+        </div>
+            <br>
+            <div style="text-align:center">
+                <input type="checkbox" id="vocab_cb" name="vocab_cb" value="1" checked onclick="Check_Vocab()">
+                <label for="vocab_cb">Multiple Choice Questions</label>
+                <input type="checkbox" id="s_and_l_cb" name="s_and_l_cb" value="1" checked onclick="Check_SL()">
+                <label for="s_and_l_cb">Speaking and Listening</label>
+            </div>
+
+        </div>
+        <script type="text/javascript" src="synonym2_js.js"></script>
+        
+    </body>
+</html>
+
+
+
