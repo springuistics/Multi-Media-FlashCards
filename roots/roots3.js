@@ -138,6 +138,10 @@ const data = [
 
 
 var RN = "";
+var language_var = 'en-US'
+function Check_Language(){
+  language_var = document.getElementById('language_select').value;
+}
 
 function reset_speech() {
     document.getElementById('good_p').style.visibility="hidden";
@@ -230,7 +234,7 @@ function answeredD() {
 function Listen() {
     var word = data[RN].example_word;
     let utter = new SpeechSynthesisUtterance();
-    utter.lang='en-US';
+    utter.lang = language_var;
     utter.text = word;
     window.speechSynthesis.speak(utter);
 }
@@ -239,7 +243,7 @@ function init() {
     window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
     recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
-    recognition.lang = 'en-US';
+    recognition.lang = language_var;
     recognition.interimResults = true;
     recognition.onresult = disp;
 }
