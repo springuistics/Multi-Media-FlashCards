@@ -1,14 +1,20 @@
+.my_header{
+    text-align: center;
+}
+
+
+
 .two-col{
     overflow: hidden;
 }
 
-.two-col .Acards  {
+.two-col .A1cards  {
     width: 40%;
     float: left;
 }
 
 
-.two-col .Bcards{
+.two-col .B1cards{
     width: 40%;
     float: right;
 }
