@@ -44,6 +44,12 @@
             <button id="talk" class="slbutton" onclick="start()">Speak</button>
             <br>
             <br>
+            <select name="language_select" id="language_select" onchange="Check_Language()">
+                <option value='en-US'>American English</option>
+                <option value='en-GB'>British English</option>
+            </select>
+            <br>
+            <br>
             <label for="speech_output">The computer heard...</label>
             <br>
             <textarea id="speech_output" style="width:400px; height: 40px" readonly></textarea>
