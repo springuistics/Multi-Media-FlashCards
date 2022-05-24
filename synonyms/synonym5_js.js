@@ -11,7 +11,7 @@ const data = [
       {
         "word": "ubiquitous",
         "sentence": "Toyotas are the most ubiquitous vehicle on the road today.",
-        "answer_1": null,
+        "answer_1": "null",
         "answer_2": "prevalent",
         "answer_3": "ardent",
         "answer_4": "hated",
@@ -36,7 +36,7 @@ const data = [
         "correct": "fanatics"
       },
       {
-        "word": null,
+        "word": "null",
         "sentence": "The contract is null if either party violates the agreement.",
         "answer_1": "ardent",
         "answer_2": "violation",
@@ -95,7 +95,7 @@ const data = [
         "answer_1": "zealot",
         "answer_2": "transition",
         "answer_3": "fervent",
-        "answer_4": null,
+        "answer_4": "hurt",
         "correct": "transition"
       },
       {
@@ -131,8 +131,8 @@ const data = [
         "answer_1": "infracted",
         "answer_2": "fervent",
         "answer_3": "robust",
-        "answer_4": null,
-        "correct": null
+        "answer_4": "null",
+        "correct": "null"
       },
       {
         "word": "ardent",
@@ -167,7 +167,7 @@ const data = [
         "answer_1": "void",
         "answer_2": "animated",
         "answer_3": "robust",
-        "answer_4": null,
+        "answer_4": "null",
         "correct": "robust"
       },
       {
