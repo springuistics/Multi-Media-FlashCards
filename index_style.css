@@ -18,8 +18,9 @@ th, td {
     border-width: 2pt;
     border-collapse: collapse;
     text-align: left;
-    vertical-align: bottom;
+    vertical-align: top;
     padding: 15pt;
+    border-spacing: 15pt;
     border-color: antiquewhite;
 }
 
