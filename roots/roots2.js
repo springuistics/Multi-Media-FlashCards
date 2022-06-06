@@ -280,7 +280,7 @@ function answeredD() {
 function Listen() {
     var word = data[RN].example_word;
     let utter = new SpeechSynthesisUtterance();
-    recognition.lang = language_var;
+    utter.lang = language_var;
     utter.text = word;
     window.speechSynthesis.speak(utter);
 }
@@ -289,7 +289,7 @@ function init() {
     window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
     recognition = new webkitSpeechRecognition();
     recognition.continuous = true;
-    recognition.lang = 'en-US';
+    recognition.lang = language_var;
     recognition.interimResults = true;
     recognition.onresult = disp;
 }
