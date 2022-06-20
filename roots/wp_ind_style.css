@@ -3,11 +3,11 @@
 }
 
 .chooser_button {
-    border: 2px solid black;
-    background-color: rgb(221, 0, 241);
+    border: 2px solid white;
+    background-color: rgb(146, 232, 149);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
-    color: rgb(255, 255, 255);
+    color: rgb(40, 166, 99);
     margin: auto;
     margin-top: 30px;
     width: 250px;
@@ -17,23 +17,30 @@
 }
 
 .items_chooser {
-    text-align: center;
+    text-align: left;
     border : solid 2px rgba(0, 0, 0, 0.884);
-    background-color: rgb(196, 255, 192);
-    margin: auto;
+    background-color: rgb(214, 249, 212);
+    column-count: 3;
+    column-gap: 30 px;
+    display: block;
+    margin-left: auto;
+    margin-right:auto;
+    padding: 10px;
+    width: 60%;
+
 }
 
 .items_chooser .closer {
-    border: 2px solid black;
-    background-color: rgb(63, 2, 2);
+    border: 2px solid rgb(93, 133, 111);
+    background-color: rgb(24, 107, 62);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color: rgb(255, 255, 255);
     margin: auto;
     margin-top: 20px;
-    width: 250px;
+    width: 200px;
     height: 40px;
-    font-size: 24px;
+    font-size: 18px;
     text-align: center;
 }
 
