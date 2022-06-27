@@ -1179,9 +1179,6 @@ const bigdata = [
       labeler.setAttribute("for", "itemno_" + index);
       labeler.id = "itemno_id_" + index;
       labeler.textContent = current_item;
-      var dumb_br = document.createElement("br");
-      dumb_br.id = "dumb_br_" + index;
-      document.getElementById('items_chooser').appendChild(dumb_br);
       document.getElementById('items_chooser').appendChild(checker);
       document.getElementById('items_chooser').appendChild(labeler);
       if (item_select.length > 0){
@@ -1204,17 +1201,13 @@ const bigdata = [
     bigdata.forEach(function (problem, index){
       var get_check = "itemno_"+index;
       var get_label = "itemno_id_"+index;
-      var get_br = "dumb_br_"+index;
-      var act_br = document.getElementById(get_br);
       var act_label = document.getElementById(get_label);
       var act_check = document.getElementById(get_check);
       if (act_check.checked == true){
-        item_select.push(index);
-        
+        item_select.push(index);        
       }
       act_check.parentNode.removeChild(act_check);
       act_label.parentNode.removeChild(act_label);
-      act_br.parentNode.removeChild(act_br);
     });
     document.getElementById('items_chooser').style.display="none";
     wpupdate();
