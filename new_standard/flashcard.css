@@ -1,0 +1,231 @@
+.mc {
+    border: solid 5px rgba(0, 0, 0, 0.884);
+    background-color: rgb(252, 211, 157);
+    text-align: center;
+    width: 65%;
+    margin: auto;
+    margin-top: 50px;
+}
+.filler {
+    visibility: hidden;
+}
+.slider_holder{
+    display: inline;
+    margin: auto;
+    text-align: center;
+}
+.mc_switch{
+    position: relative;
+    display: inline-block;
+    width: 54px;
+    height: 26px;
+}
+.mc_switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.mc_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+.mc_slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+input:checked + .mc_slider {
+    background-color: #2196F3;
+}
+input:focus + .mc_slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+input:checked + .mc_slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+.switch_text1{
+    position: relative;
+    right: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+.switch_text2{
+    position: relative;
+    left: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+
+.writing {
+    border: solid 5px rgba(0, 0, 0, 0.884);
+    background-color: rgb(248, 193, 248);
+    text-align: center;
+    width: 65%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.ansbutton{
+    border: 4px solid rgb(233, 106, 3);
+    background-color: white;
+    font-weight: bold;
+    height: 40px;
+    font-size: 16px;
+}
+
+.slbutton{
+    border: 4px solid rgb(3, 150, 218);
+    background-color: white;
+    font-weight: bold;
+    width: 150px;
+    height: 35px;
+    font-size: 18px;
+
+}
+
+.nw_button {
+    border: 2px solid black;
+    background-color: rgb(93, 0, 241);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 50px;
+    width: 300px;
+    height: 50px;
+    font-size: 24px;
+}
+
+.choices {
+    margin-top: 25px;
+}
+
+.e_sentence {
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.videos {
+    border: solid 5px rgba(0, 0, 0, 0.884);
+    background-color: rgb(225, 235, 188);
+    text-align: center;
+    width: 65%;
+    margin: auto;
+    margin-top: 70px;   
+}
+
+.h_and_s {
+    border: solid 5px rgba(0, 0, 0, 0.884);
+    background-color: rgb(159, 248, 248);
+    text-align: center;
+    width: 65%;
+    margin: auto;
+    margin-top: 70px;   
+}
+
+#speech_output {
+    margin: auto;
+    text-align: center;
+    width: 500px;
+    height: 25px;
+    font-size: 14px;
+    border:rgba(0, 0, 0, 0.884) 3px;
+    background-color: aliceblue;
+}
+
+.chooser_button {
+    border: 2px solid rgb(73, 73, 73);
+    border-style: outset;
+    background-color: rgb(146, 232, 149);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(27, 110, 66);
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: auto;
+    height: 40px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.items_chooser {
+    text-align: left;
+    border : solid 2px rgba(0, 0, 0, 0.884);
+    background-color: rgb(214, 249, 212);
+    margin: auto;
+    width: 940px;
+}
+
+.items_chooser > label {
+    display: inline-block;
+    width: 180px;
+    height: 20px;
+    padding: 5px;
+}
+
+.items_chooser > input {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    padding: 5px;
+}
+
+.items_chooser .closer {
+    border: 2px solid rgb(93, 133, 111);
+    border-style: outset;
+    background-color: rgb(24, 107, 62);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: auto;
+    height: 40px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.items_chooser .setbtn {
+    border: 2px solid rgb(0, 38, 121);
+    background-color: rgb(18, 61, 180);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: auto;
+    height: auto;
+    font-size: 14px;
+    text-align: center;
+    display: inline;
+}
+
+.writingbutton{
+    border: 4px solid rgb(71, 1, 88);
+    background-color: white;
+    font-weight: bold;
+    height: 40px;
+    font-size: 16px;
+}

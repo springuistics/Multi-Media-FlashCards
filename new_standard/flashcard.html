@@ -1,0 +1,160 @@
+<!--This is php code for turning into a php file<?php
+//Initialize session
+session_start();
+
+//Check for log-in-edness and redirect as necessary
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: login.php");
+    exit;
+}
+?>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="flashcard.css" rel="stylesheet" type="text/css"><!--Link this to whereever the css file is-->
+    <title>Practice With ITEM TYPE</title><!--Replace "ITEM TYPE" with whatever the item type is-->
+</head>
+<!--For testing purposes, "first action" is called here, but I think we can delete once we are on the server and calling it on line 13 of the javascript.-->
+<body onload="first_action()">
+    <script src="../common/a1_ws.js"></script>
+    <!--This is php code for pulling in a header<?php include('header.php'); ?>-->
+    <br>
+    <!--This is the div for the "items chooser section". Note the actual choices are created by JavaScript-->
+    <div style="text-align: center"><button class="chooser_button" id="choose" onclick="Choose_Items()">Click Here to Set Study Items</button></div>
+        <div class ="items_chooser" id="items_chooser" style="display:none">
+            <p style="text-align:center">Select from pre-made sets below, or check/uncheck the items you do/don't want to study:</p>
+            <!--Continue making "sets" within this div for however many sets there are-->
+            <div style="text-align: center"><button class="setbtn" id="set1" onclick="FirstSet()">Select First 20 Roots</button>
+            <button class="setbtn" id="set2" onclick="SecondSet()">Select Second 20 Roots</button>
+            <button class="setbtn" id="set3" onclick="ThirdSet()">Select Last 15 Roots</button>
+            <button class="setbtn" id="set_all" onclick="AllSet()">Select All Roots</button>
+            </div>
+            <div style="text-align:center"><button class="closer" id="finished" onclick="Items_Chosen()">Save My Choices</button></div>
+            <br>
+        </div>
+    <br>
+    
+    <!--This is the div for the item selection types. Please delete any and all question types that do not apply-->
+    <div style="text-align:center">
+        <p>Select Question Types:</p>
+        <input type="checkbox" id="vocab_cb" name="vocab_cb" value="1" onclick="Checkbox_Vocab()">
+        <label for="vocab_cb">Multiple Choice Questions</label>
+        <input type="checkbox" id="writing_cb" name="writing_cb" value="1" onclick="Checkbox_Writing()">
+        <label for="vocab_cb">Writing Questions</label>
+        <input type="checkbox" id="video_cb" name="video_cb" value="1" onclick="Checkbox_Videos()">
+        <label for="vocab_cb">Video Examples</label>
+        <input type="checkbox" id="s_and_l_cb" name="s_and_l_cb" value="1" onclick="Checkbox_SL()">
+        <label for="s_and_l_cb">Speaking and Listening</label>
+    </div>
+    
+    <!--This holds the multiple choice questions.-->
+    <div class="mc" id="all_mc" style="display: none">
+        <br>
+        <!--A toggle switch to shift between multiple choice types: i.e., context or Japanese-->
+        <div class="slider_holder">
+            <span class="switch_text1">English/Japanese</span>
+            <label class="mc_switch"><input type="checkbox" id="mc_q_type" checked onclick="Set_mc_answers()"><span class="mc_slider"></span></label>
+            <span class="switch_text2">In Context</span>
+        </div>
+        <h3 id="mc_q_sentence">Please select items to practice first.</h3>
+        <h1 id="item_value">Please Select Items</h1>
+        <button id="answer1" class="ansbutton" onclick="answered('A')">Answer 1</button>
+        <button id="answer2" class="ansbutton" onclick="answered('B')">Answer 2</button>
+        <button id="answer3" class="ansbutton" onclick="answered('C')">Answer 3</button>
+        <button id="answer4" class="ansbutton" onclick="answered('D')">Answer 4</button>
+    <br>
+        <h2 id="mc_feedback" style="visibility: hidden; background-color:rgb(106, 201, 29); font-weight: bold">Correct!</h2>
+        <br>
+    </div>
+    
+    <!--This holds the writing questions-->
+    <div class="writing" id="writing" style="display:none">
+        <h3>Fill in the blank by writing the item in its appropriate form:</h3>
+        <h2 id="e_sentence">Example Sentence</h2>
+        <br>
+        <label for="boxy-box">Write your answer below:</label>
+        <br>
+        <input type="text" id="boxy-box">
+        <br>
+        <br>
+        <button id="writing_answer" class="writingbutton" onclick="W_Check()">Check Answer</button>
+        <button id="writing_answer2" class="writingbutton" onclick="SeeWritingAnswer()">See Correct Answer</button>
+        <br>
+        <h2 id="w_feedback" style="visibility: hidden; background-color:rgb(106, 201, 29); font-weight: bold">Correct!</h2>
+        <br>
+    </div>
+    
+    <!--This holds the video examples-->
+    <div class="videos" id="videos" style="display:none">
+        <h3>See an example of the item used in context</h3>
+        <h2 id="v_t_item">Select items to study first</h2>
+        <br>
+        <div style="text-align: center"><iframe id= "video_p" width="560" height="315" src="" title="YouTube video player" frameborder="0" allowfullscreen></iframe></div>
+        <br>
+    </div>
+    
+    <!--This holds the speaking and listening questions-->
+    <div class="h_and_s" id="all_sl" style="display:none">
+        <h3><h3 style="color:rgb(54, 172, 246);">Hear and speak an example word.</h3>
+        <h1 id="h_s_example">Please Select Items To Practice First</h1>
+        <br>
+        <br>
+        <button id="hear" class="slbutton" onclick="Listen()">Hear</button>
+        <button id="talk" class="slbutton" onclick="start()">Speak</button>
+        <br>
+        <br>
+        <select name="language_select" id="language_select" onchange="Check_Language()">
+            <option value='en-US'>American English</option>
+            <option value='en-GB'>British English</option>
+        </select>
+        <br>
+        <br>
+        <label for="speech_output">The computer heard...</label>
+        <br>
+        <p id="speech_output"></p>
+        <br>
+        <h2 id="sl_feedback" style="visibility: hidden; background-color:rgb(67, 168, 21); font-weight: bold">Good Job!</h2>
+        <br>
+    </div>
+    
+    <!--This holds the next, previous, and random buttons-->
+    <div id="btn_holder" style="text-align:center; display: none">
+        <button class="nw_button" onclick="getPreviousWord()">Previous</button>
+        <button class="nw_button" onclick="getRandomWord()">Random</button>
+        <button class="nw_button" onclick="getNextWord()">Next</button>
+    </div>
+    
+    <!--This holds the javascript call-->
+    <script type="text/javascript" src="flashcard.js"></script>
+    
+    <!-- This i sthe php that will read the server in from the data and prep it for reading by the JavaScript. Yes, I know its dumb. Don't judge me:
+        Also, be sure to change the SQL query to match whatever is in the database!!!
+
+        <?php 
+        require "config.php"; 
+        $sql = "SELECT fc_mc_wrong, fc_mc_right, type_wrong, type_right, fc_s_clicks, fc_l_clicks, FROM users WHERE username = ?";
+        $stmt = mysqli_prepare($link, $sql);
+        mysqli_stmt_bind_param($stmt, "s", $_SESSION["username"]);
+        mysqli_stmt_execute($stmt);
+        mysqli_stmt_bind_result($stmt, $mc_wrong, $mc_right, $type_wrong, $type_right, $s_clicks, $l_clicks);
+        mysqli_stmt_fetch($stmt);
+        if ($mc_wrong === null) {$mc_wrong = 0;}
+        if ($mc_right === null) {$mc_right = 0;} 
+        if ($type_wrong === null) {$type_wrong = 0;}
+        if ($type_right === null) {$type_right = 0;} 
+        if ($s_clicks === null) {$s_clicks = 0;}
+        if ($l_clicks === null) {$l_clicks = 0;} 
+        ?>
+    <br>
+    <p style="display: none" id="user_selections">Test</p>
+    <p style="display: none" id="secret_mc_rights"><?php echo $mc_right ?></p>
+    <p style="display: none" id="secret_mc_wrongs"><?php echo $mc_wrong ?></p>
+    <p style="display: none" id="secret_type_rights"><?php echo $type_right ?></p>
+    <p style="display: none" id="secret_type_wrongs"><?php echo $type_wrong ?></p>
+    <p style="display: none" id="secret_s_clicks"><?php echo $s_clicks ?></p>
+    <p style="display: none" id="secret_l_clicks"><?php echo $l_clicks ?></p>
+    -->
+</body>
+</html>
